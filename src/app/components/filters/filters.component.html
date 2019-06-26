@@ -1,0 +1,17 @@
+<div class="filters">
+  <h2>Валюта</h2>
+  <ul class="lang">
+          <li *ngFor="let curItem of curMenu">{{curItem}}</li>
+  </ul>
+  <h3>Количество пересадок</h3>
+  <div class="filters-container">
+      <div *ngFor="let stopItem of stops" class="transplants-filter"  >
+          <input type="checkbox" 
+              id={{stopItem.id}} 
+              class="ckeckStops" 
+              />    
+          <label htmlFor={{stopItem.id}}>{{stopItem.stop}}</label>
+          <a data-id={{stopItem.id}} class="hoverLink">только</a>
+      </div>
+  </div>
+</div>
