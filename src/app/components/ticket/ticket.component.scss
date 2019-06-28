@@ -1,0 +1,102 @@
+.tickets {
+  flex-basis: 566px;
+}
+.ticket {
+  height: 161px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 3px #5b89a440;
+  margin: 10px;
+  padding: 0 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  transition-duration: 0.4s;
+}
+.ticket:hover {
+  box-shadow: 0 6px 10px 1px #5b89a440;
+}
+.btn-buy {
+  background-color: #FF6D00;
+  box-shadow: 0 1px 1px #d64d08;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  width: 160px;
+  height: 56px;
+  cursor: pointer;
+  padding-top: 7px;
+  margin-bottom: 10px;
+  transition-duration: 0.4s;
+  box-sizing: border-box;
+}
+.btn-buy:hover {
+  background-color: #ff8124;
+}
+.amount-transp {
+  margin-bottom: 35px;
+}
+.price {
+  margin: auto;
+}
+.side-buy {
+  border-right: 1px solid #F2F2F2;
+  height: 100%;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.transp-side {
+  display: flex;
+  color: #979797;
+  padding-left: 10px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+.transp-from, .transp-to {
+  margin-top: 20px;
+  font-size: 12px;
+  text-align: left;
+  line-height: 1.5;
+}
+.sity {
+  color: #4a4a4a;
+}
+.time {
+  font-size: 32px;
+  color: #4a4a4a;
+}
+.underline {
+  height: 1px;
+  width: 108px;
+  right: 10px;
+  margin-top: 7px;
+  background-color: #d2d5d6;
+  position: relative;
+}
+.plane {
+  position: absolute;
+  right: -15px;
+  bottom: -6px;
+}
+@media screen and (max-width: 400px) {
+  .ticket {
+    height: auto;
+    padding: 20px;
+    flex-direction: column;
+    flex-direction: column-reverse;
+    margin: 10px;
+  }
+  .side-buy {
+    border-right: none;
+    width: 100%;
+  }
+  .side-buy img {
+    margin: auto;
+  }
+  .btn-buy {
+    margin: 10px auto 10px;
+  }
+}
