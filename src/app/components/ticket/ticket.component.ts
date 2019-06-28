@@ -10,7 +10,7 @@ import { ITickets } from '../../interfaces/tickets';
 })
 export class TicketComponent implements OnInit {
   // API = 'http://www.json-generator.com/api/json/get/cqGducpwHS?indent=2';
-  protected tickets: ITickets[];
+  public tickets: ITickets[];
 
   constructor(private ticketsService: TicketsService) { }
 
