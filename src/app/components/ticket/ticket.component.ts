@@ -23,4 +23,40 @@ export class TicketComponent implements OnInit {
     console.log('tickets3', this.tickets);
   }
 
+  changeCur(currency) {
+    return currency === 'RUB' ? '₽' : currency === 'USD' ? `<span>&#36;</span>` : `<span>&euro;</span>`;
+  }
+
+  transformSum(price) {
+    var trPrice = price.toString();
+    if (trPrice.length > 3) {
+      for (let i = trPrice.length; trPrice >= 0  ; i--) {
+        if (i % 3 == 0) {
+          var ar = trPrice.split('');
+          ar.splice(trPrice.length - i, 0, ' ');
+          trPrice = ar.join('');
+        }
+      }
+    }
+
+    return trPrice
+  }
+
+  calcCur(currency, price) {
+    switch (currency) {
+      case 'RUB': {
+        return this.transformSum(price)
+      }
+      case 'USD': {
+        return (price * 0.016).toFixed(1)
+      }
+      case 'EUR': {
+        return (price * 0.014).toFixed(1)
+      }
+      default: {
+        return price
+      }
+    }
+  }
+
 }

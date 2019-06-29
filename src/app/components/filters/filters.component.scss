@@ -1,6 +1,8 @@
+:host {
+  height: 331px;
+  flex-basis: 232px;
+}
 .filters {
-    height: 331px;
-    flex-basis: 232px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 3px #5b89a440;
@@ -23,7 +25,7 @@ h2, h3 {
  .hoverLink {
     position: absolute;
     text-transform: uppercase;
-    font-size: 12px; 
+    font-size: 12px;
     color: #2196f3;
     cursor: pointer;
     right: 10px;
@@ -40,7 +42,7 @@ h2, h3 {
     position: relative;
 }
 
-.transplants-filter:hover {    
+.transplants-filter:hover {
     background-color: #f1fcff;
 }
 .transplants-filter:hover .hoverLink {
@@ -70,10 +72,10 @@ h2, h3 {
 
 .transplants-filter input:checked + label:before
 {
-    border: 1px solid #2196f3;  
+    border: 1px solid #2196f3;
 }
 
-.transplants-filter input:checked + label:after 
+.transplants-filter input:checked + label:after
  {
     content: '';
     display: block;
@@ -92,7 +94,7 @@ h2, h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid#D2D5D6; 
+    border: 1px solid#D2D5D6;
     border-radius: 5px;
     padding: 0;
     height: 40px;

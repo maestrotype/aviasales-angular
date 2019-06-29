@@ -18,9 +18,14 @@ export class TicketsService {
       return ticketList.map(function(ticket: any)
      {
         return {
-          name: ticket.origin_name,
+          origin_name: ticket.origin_name,
+          departure_time: ticket.departure_time,
+          departure_date: ticket.departure_date,
           price: ticket.price,
-          stops: ticket.stops
+          stops: ticket.stops,
+          arrival_time: ticket.arrival_time,
+          arrival_date: ticket.arrival_date,
+          destination_name: ticket.destination_name
         }
       });
     }));

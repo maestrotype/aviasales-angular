@@ -12,20 +12,20 @@
   <div class="transp-side">
       <div class="transp-from">
           <div class="time">
-            <!-- {departure_time} -->
+            {{ ticket.departure_time }}
           </div>
           <div class="sity">
-            {{ ticket.name }}
+            {{ ticket.origin_name }}
             <!-- {origin},{origin_name} -->
           </div>
           <div class="date">
+              {{ ticket.departure_date }}
             <!-- {dateFormat(departure_date, "d mmm, yyyy, ddd")} -->
           </div>
       </div>
       <div class="amount-transp">
           <span>
-            {{ ticket.stops }}
-            <!-- {stops === 0 ? 'без пересадок' : stops === 1 ? '1 пересадкa' : stops + ' пересадки'} -->
+            {{ ticket.stops === 0 ? 'без пересадок' : ticket.stops === 1 ? '1 пересадкa' : ticket.stops + ' пересадки'}}
           </span>
           <div class="underline">
               <img class="plane" src="assets/img/plane.svg" alt="plane" />
@@ -33,12 +33,14 @@
       </div>
       <div class="transp-to">
           <div class="time">
-            <!-- {arrival_time} -->
+            {{ ticket.arrival_time }}
           </div>
           <div class="sity">
+            {{ ticket.destination_name }}
             <!-- {destination_name},{destination} -->
           </div>
           <div class="date">
+            {{ ticket.arrival_date }}
             <!-- {dateFormat(arrival_date, "d mmm, yyyy, ddd")} -->
           </div>
       </div>
