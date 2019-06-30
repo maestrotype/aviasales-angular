@@ -3,7 +3,11 @@
     <img src="assets/img/logo.svg" class="App-logo" alt="logo" />
   </header>
   <div class="container">
-    <app-filters></app-filters>
-    <app-ticket></app-ticket>
+    <app-filters (activeCurrency)="changeCur($event)"></app-filters>
+    <app-ticket
+      [currency] = "currency"
+      [curSymb] = "curSymb"
+      >
+    </app-ticket>
   </div>
 </div>

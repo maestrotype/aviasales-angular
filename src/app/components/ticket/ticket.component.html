@@ -4,8 +4,7 @@
       <img src="assets/img/title.svg" alt="title" />
       <div class="btn-buy">
           <span class="price">Купить</span> <br />
-          <span class="price"> за: {{ticket.price}}
-            <!-- {this.calcCur(this.props.currency, price)} {this.changeCur(this.props.currency)} -->
+          <span class="price"> за: {{ calcCur(currency, ticket.price) }} {{ curSymb }}
           </span>
       </div>
   </div>
@@ -19,7 +18,7 @@
             <!-- {origin},{origin_name} -->
           </div>
           <div class="date">
-              {{ ticket.departure_date }}
+              {{ ticket.departure_date | date }}
             <!-- {dateFormat(departure_date, "d mmm, yyyy, ddd")} -->
           </div>
       </div>
@@ -40,7 +39,7 @@
             <!-- {destination_name},{destination} -->
           </div>
           <div class="date">
-            {{ ticket.arrival_date }}
+            {{ ticket.arrival_date | date }}
             <!-- {dateFormat(arrival_date, "d mmm, yyyy, ddd")} -->
           </div>
       </div>

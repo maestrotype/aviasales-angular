@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'aviasales-angular';
+  curSymb: string;
+  currency: string;
+
+  changeCur(currency) {
+    console.log('currency', currency);
+    this.currency = currency;
+    this.curSymb = currency === 'RUB' ? '₽' : currency === 'USD' ? '$' : '€';
+    console.log('curParent', this.curSymb);
+  }
 }

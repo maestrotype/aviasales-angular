@@ -123,3 +123,9 @@ h2, h3 {
     color: #fff;
     background-color: #64b5f5;
 }
+
+@media screen and (max-width: 400px) {
+  h3 {
+    margin-top: 10px;
+  }
+}

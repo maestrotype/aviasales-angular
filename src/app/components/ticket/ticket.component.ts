@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { TicketsService } from '../../services/tickets.service';
 import { ITickets } from '../../interfaces/tickets';
 
@@ -10,21 +10,22 @@ import { ITickets } from '../../interfaces/tickets';
 })
 export class TicketComponent implements OnInit {
   // API = 'http://www.json-generator.com/api/json/get/cqGducpwHS?indent=2';
+  @Input() currency: string;
+  @Input() curSymb: string;
   public tickets: ITickets[];
+  // public price: number;
 
   constructor(private ticketsService: TicketsService) { }
 
   ngOnInit() {
     this.ticketsService.getTickets().subscribe( data => {
-      console.log('tickets1', data);
       this.tickets = data;
-      console.log('tickets2', this.tickets);
     } );
-    console.log('tickets3', this.tickets);
+    this.curSymb = '₽';
   }
 
-  changeCur(currency) {
-    return currency === 'RUB' ? '₽' : currency === 'USD' ? `<span>&#36;</span>` : `<span>&euro;</span>`;
+  ngDoCheck() {
+
   }
 
   transformSum(price) {
@@ -48,10 +49,10 @@ export class TicketComponent implements OnInit {
         return this.transformSum(price)
       }
       case 'USD': {
-        return (price * 0.016).toFixed(1)
+        return  (price * 0.016).toFixed(1)
       }
       case 'EUR': {
-        return (price * 0.014).toFixed(1)
+        return  (price * 0.014).toFixed(1)
       }
       default: {
         return price
