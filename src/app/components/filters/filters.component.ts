@@ -9,6 +9,7 @@ export class FiltersComponent implements OnInit {
 
   @Output() activeCurrency = new EventEmitter<string>();
 
+  public currency: string = 'RUB';
   public curMenu = [
     'RUB',
     'USD',
@@ -49,9 +50,7 @@ export class FiltersComponent implements OnInit {
   }
 
   changeCur(e) {
-    console.log('target', e.target);
-
-    // e.target.addClass('active');
+    this.currency = e.target.innerText;
     this.activeCurrency.emit(e.target.innerText);
   }
 

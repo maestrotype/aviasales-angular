@@ -1,7 +1,7 @@
 <div class="filters">
   <h2>Валюта</h2>
   <ul class="lang">
-    <li *ngFor="let curItem of curMenu" [ngClass]="{ 'active' : curItem === 'RUB' }" (click)="changeCur($event)">{{curItem}}</li>
+    <li *ngFor="let curItem of curMenu" [ngClass]="{ 'active' : curItem === currency }" (click)="changeCur($event)">{{curItem}}</li>
   </ul>
   <h3>Количество пересадок</h3>
   <div class="filters-container">
